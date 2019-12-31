@@ -1,0 +1,26 @@
+{
+  "name": "family-database",
+  "version": "1.0.0",
+  "description": "keeping track of a large family",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iethree/family-directory.git"
+  },
+  "author": "RPL",
+  "license": "MIT",
+  "homepage": "https://jetsons.infopanel.org",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "js-yaml": "^3.13.1",
+    "logchalk": "^1.0.1",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "nedb": "^1.8.0",
+    "stateless-email-auth": "^0.2.0"
+  }
+}

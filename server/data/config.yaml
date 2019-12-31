@@ -1,0 +1,14 @@
+# family config
+name: The Jetsons
+url: "https://jetsons.infopanel.org"
+mail:
+  server: 'REDACTED'
+  username: 'REDACTED'
+  password: 'REDACTED'
+  sender: 'Jetsons Login <login@jetsons.infopanel.org>'
+  port: 587
+  cryptokey: "REDACTED"
+  tokenExpiration: 5
+admins:
+  - REDACTED
+

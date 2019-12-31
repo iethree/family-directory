@@ -1,0 +1,56 @@
+  <html>
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel='stylesheet', href='/static/css/main.f26210e0.chunk.css' />
+  </head>
+  <body class="has-background-light">
+    <div class="fullpage">
+      <br />
+      <h1 class="padding-top-bottom title has-text-centered"> </h1>
+      <div class="columns is-centered is-mobile">
+        <div class="column is-narrow box">
+          <form id="login-form" action="/login"  method="post">
+            <div class="margin-top-bottom">
+              <label class="label"> Login </label>
+              <input name="email" class="input" type="email" placeholder="email" required pattern="[a-Z0-9._%+-]+@[a-Z0-9.-+]+\.[a-z]{2,}$" title="email must be in the format: joe@website.xyz"> </input>
+              <br /> <br />
+            </div>
+            <div class="buttons is-right">
+              <button id="loginButton" class="button is-primary" type="submit" value="submit"> Login </button>
+            </div>
+          </form>
+          <div id="msg-holder"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var searcher = new URLSearchParams(window.location.search);
+      let msg = searcher.get('msg');
+      let submit = searcher.get('submit');
+      if(msg)
+        document.getElementById('msg-holder').innerHTML = `
+        <div class="notification is-warning">
+          <button class="delete" onclick="dismiss(event)"></button>
+          <span id="msg">${msg}</span>
+        </div>
+        `;
+      if(submit){
+        document.getElementById('login-form').innerHTML = `
+        <div class="notification is-success">
+          <span id="msg">${submit}</span>
+        </div>
+        `;
+      }
+
+      function dismiss(e){
+        console.log('hello')
+        e.preventDefault();
+        document.getElementById('msg-holder').innerHTML = '';
+      }
+    </script>
+  </body>
+  </html>

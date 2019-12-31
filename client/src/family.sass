@@ -1,0 +1,231 @@
+$primary: hsl(200, 65%, 35%)
+$link: hsl(200, 65%, 35%)
+$success: hsl(141, 50%, 39%)
+$danger: hsl(0, 70%, 47%)
+$warning: hsl(49, 80%, 50%)
+
+$grey-lightest: hsl(0, 0%, 95%)
+$grey-light: hsl(0, 0%, 71%)
+$grey: hsl(0, 0%, 40%)
+$grey-dark: hsl(0, 0%, 29%)
+$grey-darkest: hsl(0, 0%, 21%)
+
+$white: hsl(0,0, 100%)
+$black: hsl(0,0,0)
+
+$desktop: 650px
+
+@import "../node_modules/bulma/bulma.sass"
+
+body
+   text-align: center
+   font-color: $grey-dark
+   background-color: $grey-lightest
+   font-size: 16px
+   min-height: 100vh
+.main
+   background-color: $grey-lightest
+   min-height: 100vh
+   padding: 10px
+   text-align: center
+   display: inline-block
+.person
+   background-color: $white
+   margin: 5px
+   text-align: center
+   border: 1px solid $grey-light
+   border-left: 7px solid $white
+   border-radius: 4px
+.directory
+   display: inline-block
+   vertical-align: top
+   width: 400px
+   .person.blur
+      display: none
+.directory-container
+   display: relative
+.gen-0
+   border-left-color: hsl(22, 90%, 43%)
+   margin-left: 5px
+.gen-1
+   border-left-color:  purple
+   margin-left: 10px
+.gen-2
+   border-left-color:  blue
+   margin-left: 15px
+.gen-3
+   border-left-color:  green
+   margin-left: 20px
+.gen-4
+   border-left-color:  $grey
+   margin-left: 25px
+.person-title
+   font-weight: 700
+   display: flex
+   justify-content: space-between
+   align-items: flex-end
+   padding: 10px 10px
+   color: $primary
+   span
+      display: flex
+      align-items: baseline
+
+.child-count
+   font-color: $grey-dark
+   span
+      padding: 0px 4px
+.person-image
+   text-align: center
+   margin-top: 20px
+   margin-bottom: 20px
+   img
+      margin: 0 auto
+      box-shadow: 0px 4px 6px 0px $grey-light
+      display: block
+      max-width: 90%
+      max-height: 300px
+      border-radius: 4px
+.person-details
+   display: inline-block
+   text-align: left
+   padding: 10px
+
+.navbar
+   position: sticky
+   top: 0px
+   display: inline-block
+   text-align: left
+   background-color: $grey-lightest
+   width: 200px
+   .active
+      font-weight: 700
+   .gen-1
+      padding-left: 20px
+   .gen-2
+      padding-left: 40px
+      font-size: 14px
+   .gen-3
+      padding-left: 60px
+      font-size: 12px
+   .gen-4
+      padding-left: 70px
+      padding-left: 10px
+@media screen and (max-width: $desktop)
+   .navbar
+      width: 100%
+      padding: 10px
+      max-width: 420px
+   .directory
+      width: fit-content
+   .family-map
+      display: none
+.news-item
+   @extend .person
+   border: 1px solid $grey-light
+   overflow: hidden
+   text-align: left
+   padding: 15px
+   .news-item-head
+      font-weight: 600
+      display: flex
+      justify-content: space-between
+      padding: 10px
+   .person-image
+      img
+         width: 120px
+.news-item.blur
+   display: none
+.searchbox
+   margin: 5px 0
+.padded
+   padding: 10px
+.edit
+   @extend .person
+   overflow: hidden
+   text-align: left
+   .edit-body
+      @media screen and (max-width: $desktop)
+         padding: 20px 10px
+      padding: 20px 50px
+      text-align: left
+   .edit-image
+      @extend .person-image
+      max-width: 150px
+      margin: 0
+
+   .list-editor
+      @extend .box
+      text-align: left
+      padding: 10px 30px
+      margin: 0
+      .list-title
+         margin-bottom: 20px
+      .list-items
+         border: none
+   .inline
+      display: inline-block 
+   .hidden
+      display: none
+   .uploadbox
+      text-align: right
+      position: relative
+      max-width: 150px
+      i
+         color: $grey-darkest
+         position: absolute
+         left: 50%
+         top: 50%
+         transform: translate(-50%, -50%)
+         z-index: 9
+         font-size: 30px
+         opacity: 0.8
+      .edit-image
+         position: inline-block
+   .uploadbox:hover > i
+      opacity: 1
+a.is-active
+   border-bottom-color: $primary
+   font-weight: 500
+   color: $primary
+a.logout
+   position: absolute
+   top: 5px
+   right: 5px
+.stats
+   text-align: center
+
+dd, dt
+   width: 45%
+   display: inline-block
+dt
+   text-align: right
+   font-weight: 600
+   margin-right: 10px
+dd
+   text-align: left
+   margin-left: 10px
+.inline-block
+   display: inline-block
+      
+
+/* Border flash */
+.flash-red
+	animation: flash-red 0.3s 3
+@keyframes flash-red
+	0%
+		border-color: $grey-light
+	50%
+		border-color: $danger
+	100%
+		border-color: $grey-light
+/* Icon pulse */
+.pulse
+	animation: pulse 0.8s infinite linear
+
+@keyframes pulse
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(1.2)
+	100%
+		transform: scale(1)
